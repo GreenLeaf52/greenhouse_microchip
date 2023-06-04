@@ -4,7 +4,7 @@ MicroDS18B20 <D3> sensor;  // Создаем термометр без адре�
 uint8_t address[8];       // Создаем массив для адреса
 
 void setup() {
-  Serial.begin(9600);
+  Serial.begin(115200);
 }
 
 void loop() {
