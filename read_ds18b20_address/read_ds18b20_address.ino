@@ -1,6 +1,6 @@
 #include <microDS18B20.h>
 
-MicroDS18B20 <D3> sensor;  // Создаем термометр без адреса на пине D2
+MicroDS18B20 <D3> sensor;  // Создаем термометр без адреса на пине D3
 uint8_t address[8];       // Создаем массив для адреса
 
 void setup() {
