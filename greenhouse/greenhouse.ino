@@ -18,7 +18,7 @@ int greenhouseID = 2; // id контроллера
 #define ecAddr 0x0A
 #define pcfAddr 0x20
 
-String url = "http://ghousespace.ru";
+String url = "http://greentech-eco.online";
 
 WiFiClient wfcl;
 HTTPClient http;
@@ -54,9 +54,12 @@ void setup() {
   wfcl.setTimeout(10000);
   connectWifi();
   delay(1000);
+  createGreenhouse();
 }
 
 void loop() {
+  get_values();
+  sendValues();
 }
 
 void get_values() {
