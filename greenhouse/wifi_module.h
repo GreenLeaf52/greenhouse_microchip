@@ -17,11 +17,13 @@ public:
     _ghID = ghID;
   };
   bool connectToWifi() {
+    Serial.println(_ssid);
+    Serial.println(_password);
     wfcl.setTimeout(10000);
     WiFi.setAutoReconnect(false);
     WiFi.begin(_ssid, _password);
 
-    _tries = 10;
+    _tries = 50;
     while (--_tries>0 && WiFi.status() != WL_CONNECTED) {
       delay(500);
       Serial.print(".");

@@ -4,7 +4,7 @@
 #include <Esp.h>
 #include <vector>
 
-const char* ssid = "PODVbIPERDbISH";                                         // адрес сети wifi
+const char* ssid = "PODVbIPERDbISH_5G";                                         // адрес сети wifi
 const char* password = "oralcumshot83cm";                                    // пароль сети wifi
 uint8_t temp1_addr[8] = { 0x28, 0xD7, 0xDA, 0x49, 0xF6, 0xE0, 0x3C, 0xFB };  // адрес первого термометра
 uint8_t temp2_addr[8] = { 0x28, 0x8E, 0x9, 0x49, 0xF6, 0x82, 0x3C, 0x98 };   // адрес второго термометра
@@ -26,6 +26,7 @@ std::vector<String> dataQueue;
 void setup() {
   pinMode(D4, OUTPUT);
   Serial.begin(115200);
+  Serial.println();
   initial();
 }
 
@@ -103,6 +104,7 @@ void initial() {
     Serial.println("Теплица создана");
   }
   delay(1000);
+  digitalWrite(D4, LOW);
 }
 
 void exception(int intHigh, int intLow) {
